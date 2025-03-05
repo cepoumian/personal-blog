@@ -12,6 +12,25 @@ import "@/sass/main.scss";
     <title>Astro Basics</title>
   </head>
   <body>
+    <button id="theme-toggle" aria-label="Toggle theme">Toggle Theme</button>
     <slot />
   </body>
 </html>
+
+<script is:inline>
+  const toggle = document.getElementById("theme-toggle");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const savedTheme = localStorage.getItem("theme");
+  const currentTheme = savedTheme || (prefersDark ? "dark" : "light");
+
+  document.documentElement.setAttribute("data-theme", currentTheme);
+
+  toggle.addEventListener("click", () => {
+    const newTheme =
+      document.documentElement.getAttribute("data-theme") === "dark"
+        ? "light"
+        : "dark";
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+  });
+</script>
