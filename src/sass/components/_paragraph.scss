@@ -1,7 +1,7 @@
 @use '../abstracts' as *;
 
 .paragraph {
-  color: clr(secondary, 500);
+  color: clr(green, 500);
 
   .hero & {
     max-inline-size: $measure-tight;
