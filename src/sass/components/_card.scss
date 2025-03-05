@@ -1,0 +1,8 @@
+@use '../abstracts' as *;
+
+.card {
+  // padding: clamp(size(16), size(24) + 2vw, size(32));
+  padding: size(32);
+  border-radius: size(16);
+  box-shadow: size(16) size(32) size(56) 0px rgba(143, 174, 207, 0.25);
+}

@@ -1,0 +1,37 @@
+$ff-sans: 'Inter', sans-serif;
+
+$ff-base: $ff-sans;
+
+$font-sizes: (
+  900: 4rem,
+  // 64px
+  800: 3rem,
+  // 48px
+  700: 2rem,
+  // 32px
+  600: 1.5rem,
+  // 24px
+  500: 1.25rem,
+  // 20px
+  400: 1rem,
+  // 16px
+  300: 0.875rem, // 14px
+);
+
+$fw-300: 300; // Light
+$fw-400: 400; // Regular
+$fw-600: 600; // Semi-bold
+$fw-700: 700; // Bold
+
+// Line height
+$line-height-regular: 1.5;
+$line-height-medium: 1.2;
+$line-height-tight: 1.1;
+
+// Letter spacing
+$letter-spacing-tight: -0.05em;
+$letter-spacing-medium: 0.05em;
+$letter-spacing-loose: 0.1em;
+
+$measure-tight: 50ch;
+$measure-regular: 60ch;

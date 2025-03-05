@@ -1,0 +1,29 @@
+@use '../abstracts' as *;
+
+.heading {
+  font-weight: $fw-600;
+  line-height: $line-height-tight;
+  color: clr(primary, 900);
+  white-space: normal;
+  word-break: break-word;
+
+  &[data-level='1'] {
+    font-size: clamp(fs(600), fs(700) + 2vw, fs(900));
+  }
+
+  &[data-level='2'] {
+    font-size: clamp(fs(600), fs(600) + 2vw, fs(800));
+  }
+
+  &[data-level='3'] {
+    font-size: fs(600);
+  }
+
+  &[data-level='4'] {
+    font-size: fs(500);
+  }
+
+  .hero & {
+    max-inline-size: $measure-regular;
+  }
+}

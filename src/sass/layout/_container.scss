@@ -1,0 +1,22 @@
+@use '../abstracts/' as *;
+
+.container {
+  --padding: #{$container-inline-padding} * 2;
+  --max-width: #{$container-max-width};
+
+  width: min(100% - var(--padding), var(--max-width));
+  margin-inline: auto;
+
+  @include mq('laptop') {
+    --padding: 2.5rem * 2;
+    --max-width: 43rem;
+  }
+
+  @include mq('tablet') {
+    --padding: 2rem * 2;
+  }
+}
+
+.container[data-type='wide'] {
+  --max-width: #{$container-max-width-wide};
+}

@@ -1,0 +1,16 @@
+@use '../abstracts/' as *;
+
+.stack {
+  --stack-space: #{size(32)};
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stack > * {
+  margin-block: 0;
+}
+
+.stack > * + * {
+  margin-block-start: var(--stack-space);
+}

@@ -1,0 +1,30 @@
+$sizes: (
+  0: 0,
+  8: 0.5rem,
+  12: 0.75rem,
+  16: 1rem,
+  20: 1.25rem,
+  24: 1.5rem,
+  32: 2rem,
+  36: 2.25rem,
+  40: 2.5rem,
+  48: 3rem,
+  56: 3.5rem,
+  64: 4rem,
+  72: 4.5rem,
+  88: 5.5rem,
+  96: 6rem,
+  104: 6.5rem,
+  128: 8rem,
+  144: 9rem,
+);
+
+$section-padding: clamp(3rem, 10vh, 7rem);
+
+$container-inline-padding: clamp(4rem, 6rem + 1vw, 9rem);
+$container-max-width: 72.5rem;
+
+$container-max-width-wide: 75rem;
+
+$grid-gap: 1.5rem;
+$flex-group-gap: 1rem;
