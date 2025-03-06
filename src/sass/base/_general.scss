@@ -2,12 +2,12 @@
 
 :root {
   --bg-color: #{clr('neutral', 100)};
-  --text-color: #{clr('neutral', 900)};
+  --text-color: #{clr('neutral', 600)};
 }
 
 [data-theme="dark"] {
   --bg-color: #{clr('neutral', 900)};
-  --text-color: #{clr('neutral', 100)};
+  --text-color: #{clr('neutral', 400)};
 }
 
 body {

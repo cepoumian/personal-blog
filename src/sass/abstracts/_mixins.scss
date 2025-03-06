@@ -21,3 +21,49 @@
     @error 'the keyword #{$size} is not in the $breakpoints map';
   }
 }
+
+@mixin underline-transition(
+  $color,
+  $thickness: 3px,
+  $offset: 4px,
+  $duration: 200ms,
+  $timing: ease
+) {
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: 
+    text-decoration-color $duration $timing,
+    text-decoration-thickness $duration $timing,
+    text-underline-offset $duration $timing;
+
+  &:hover {
+    text-decoration-color: $color;
+    text-decoration-thickness: $thickness;
+    text-underline-offset: $offset;
+  }
+
+  @include mq('tablet') {
+    &:hover {
+      text-decoration-color: transparent;
+    }
+
+    // todo: add is-active class to the link when selected
+    &.is-active {
+      text-decoration-color: $color;
+      text-decoration-thickness: $thickness;
+      text-underline-offset: $offset;
+    }
+  }
+}
+
+@mixin border($color, $side: all, $width: 1px, $style: solid, $radius: 0) {
+  @if $side == all {
+    border: $width $style $color;
+    border-radius: $radius;
+  } @else {
+    border-#{$side}: $width $style $color;
+    border-radius: $radius;
+  }
+}

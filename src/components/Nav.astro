@@ -1,0 +1,99 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import cesar from "@/assets/avatar.jpg";
+---
+
+<nav class="navbar">
+  <div class="navbar__container">
+    <Image
+      src={cesar}
+      alt="Cesar Poumian"
+      class="navbar__avatar"
+      format="avif"
+      width={40}
+      height={40}
+    />
+    <div class="navbar__content">
+      <ul class="navbar__menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <button
+        class="navbar__toggle"
+        aria-expanded="false"
+        aria-label="Toggle menu"
+      >
+        <span class="navbar__icon navbar__icon--hamburger"></span>
+        <span class="navbar__icon navbar__icon--close"></span>
+      </button>
+      <button
+        id="theme-toggle"
+        aria-label="Toggle theme"
+        class="navbar__theme-toggle"
+        aria-pressed="false"
+      >
+        <Icon
+          id="theme-toggle-icon"
+          class="navbar__theme-icon navbar__icon--sun"
+          name="icon--sun"
+          size={24}
+        />
+        <Icon
+          class="navbar__theme-icon navbar__icon--moon"
+          name="icon--moon"
+          size={24}
+        />
+      </button>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Navbar toggle
+  const navbarToggle = document.querySelector(".navbar__toggle");
+  const menu = document.querySelector(".navbar__menu");
+
+  navbarToggle?.addEventListener("click", () => {
+    const isExpanded = navbarToggle.getAttribute("aria-expanded") === "true";
+    navbarToggle.setAttribute("aria-expanded", String(!isExpanded));
+    menu?.classList.toggle("is-active");
+    navbarToggle.classList.toggle("is-active");
+  });
+
+  // Theme toggle
+  const themeToggle = document.getElementById("theme-toggle");
+  const themeToggleIcons = document.querySelectorAll(".navbar__theme-icon");
+  const root = document.documentElement;
+
+  function setTheme(theme: string) {
+    root.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+
+    themeToggleIcons.forEach((icon) => {
+      icon.classList.toggle(
+        "is-active",
+        icon.classList.contains(
+          `navbar__icon--${theme === "dark" ? "sun" : "moon"}`
+        )
+      );
+    });
+
+    const isPressed = themeToggle?.getAttribute("aria-pressed") === "true";
+    themeToggle?.setAttribute("aria-pressed", String(!isPressed));
+  }
+
+  // Init theme on load
+  const savedTheme = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const currentTheme = savedTheme || (prefersDark ? "dark" : "light");
+  setTheme(currentTheme);
+
+  themeToggle?.addEventListener("click", () => {
+    const newTheme =
+      root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+  });
+</script>

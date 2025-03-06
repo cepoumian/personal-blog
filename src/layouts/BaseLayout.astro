@@ -1,36 +1,21 @@
 ---
 import "@/sass/main.scss";
+import BaseHead from "./BaseHead.astro";
+import Nav from "@/components/Nav.astro";
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
-  </head>
+  <BaseHead />
   <body>
-    <button id="theme-toggle" aria-label="Toggle theme">Toggle Theme</button>
-    <slot />
+    <div class="container padding-block-start-20">
+      <Nav />
+      <main>
+        <slot />
+      </main>
+    </div>
+    <!-- <button id="theme-toggle" aria-label="Toggle theme">Toggle Theme</button> -->
   </body>
 </html>
 
-<script is:inline>
-  const toggle = document.getElementById("theme-toggle");
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const savedTheme = localStorage.getItem("theme");
-  const currentTheme = savedTheme || (prefersDark ? "dark" : "light");
-
-  document.documentElement.setAttribute("data-theme", currentTheme);
-
-  toggle.addEventListener("click", () => {
-    const newTheme =
-      document.documentElement.getAttribute("data-theme") === "dark"
-        ? "light"
-        : "dark";
-    document.documentElement.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme);
-  });
-</script>
+<style></style>

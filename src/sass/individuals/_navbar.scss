@@ -1,0 +1,158 @@
+@use '../abstracts/' as *;
+
+.navbar {
+  $parent: &;
+  padding: 1rem;
+  background-color: clr('neutral', 0);
+  @include border($color: clr('neutral', 200), $radius: size(8));
+  
+  [data-theme="dark"] & {
+    background-color: clr('neutral', 800);
+    @include border($color: clr('neutral', 700), $radius: size(8));
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  &__avatar {
+    border-radius: 10%;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: size(32);
+    @include mq('tablet') {
+      gap: 0;
+    }
+  }
+  
+  &__menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+
+    li a {
+      font-weight: $fw-300;
+      text-decoration: none;
+      color: inherit;
+      @include underline-transition($color: clr('blue', 500));
+    }
+
+    @include mq('tablet') {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      padding: 1rem;
+      gap: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transform: translateY(size(32));
+      width: 100%;
+      @include border($color: clr('neutral', 200), $radius: size(8));
+
+      [data-theme="dark"] & {
+        @include border($color: clr('neutral', 700), $radius: size(8));
+      }
+
+      &.is-active {
+        display: flex;
+      }
+
+      li:not(:last-child) {
+        @include border($color: clr('neutral', 200), $side: bottom);
+        padding: size(6) 0;
+        
+        [data-theme="dark"] & {
+          @include border($color: clr('neutral', 700), $side: bottom);
+        }
+      }
+
+      &:focus {
+        font-weight: $fw-600;
+      }
+    }
+  }
+
+  &__toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+  
+    #{$parent}__icon {
+      position: relative;
+      width: 24px;
+      height: 1px;
+      background-color: var(--text-color);
+      transition: all 200ms ease;
+      display: flex;
+  
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 1px;
+        background-color: var(--text-color);
+        transition: all 200ms ease;
+      }
+  
+      &::before {
+        top: -8px;
+      }
+  
+      &::after {
+        top: 8px;
+      }
+    }
+  
+    &.is-active .navbar__icon {
+      background-color: transparent;
+  
+      &::before {
+        transform: rotate(45deg);
+        top: 0;
+      }
+  
+      &::after {
+        transform: rotate(-45deg);
+        top: 0;
+      }
+    }
+
+    @include mq('tablet') {
+      display: block;
+    }
+  }
+
+  &__theme-toggle {
+    cursor: pointer;
+    border: none;
+    border-radius: 25%;
+    background-color: clr('neutral', 200);
+    padding: size(8);
+
+    [data-theme="dark"] & {
+      background-color: clr('neutral', 900);
+    }
+  }
+
+  &__theme-icon {
+    display: none;
+
+    &.is-active {
+      display: block;
+    }
+  }
+}

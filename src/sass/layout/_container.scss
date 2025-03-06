@@ -7,10 +7,10 @@
   width: min(100% - var(--padding), var(--max-width));
   margin-inline: auto;
 
-  @include mq('laptop') {
+  /* @include mq('laptop') {
     --padding: 2.5rem * 2;
     --max-width: 43rem;
-  }
+  } */
 
   @include mq('tablet') {
     --padding: 2rem * 2;
