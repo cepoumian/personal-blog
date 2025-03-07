@@ -2,20 +2,19 @@
 import "@/sass/main.scss";
 import BaseHead from "./BaseHead.astro";
 import Nav from "@/components/Nav.astro";
+import Footer from "@/components/Footer.astro";
 ---
 
 <!doctype html>
 <html lang="en">
   <BaseHead />
   <body>
-    <div class="container padding-block-start-20">
+    <div class="base-layout | container padding-block-start-20">
       <Nav />
-      <main>
+      <main class="base-layout__content">
         <slot />
       </main>
+      <Footer />
     </div>
-    <!-- <button id="theme-toggle" aria-label="Toggle theme">Toggle Theme</button> -->
   </body>
 </html>
-
-<style></style>

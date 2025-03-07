@@ -5,6 +5,11 @@
   line-height: $line-height-tight;
   white-space: normal;
   word-break: break-word;
+  color: clr(neutral, 700);
+
+  [data-theme='dark'] & {
+    color: clr(neutral, 0);
+  }
 
   &[data-level='1'] {
     font-size: clamp(fs(600), fs(700) + 2vw, fs(900));

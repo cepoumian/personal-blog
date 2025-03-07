@@ -1,0 +1,27 @@
+---
+import { Icon } from "astro-icon/components";
+
+const tagOptions = {
+  button: "button",
+  a: "a",
+};
+
+interface Props {
+  icon: string;
+  size: number;
+  tagName: keyof typeof tagOptions;
+  href?: string;
+  blend?: boolean;
+}
+
+const { icon, size, tagName, href, blend }: Props = Astro.props;
+
+const Tag = tagName || "button";
+---
+
+<Tag
+  class:list={["icon-button", { "icon-button--blend": blend }]}
+  {...tagName === "a" && href ? { href } : {}}
+>
+  <Icon class="" name={icon} size={size} />
+</Tag>

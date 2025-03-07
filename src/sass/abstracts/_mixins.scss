@@ -2,6 +2,7 @@
 @use 'sass:math';
 @use 'sass:map';
 @use 'breakpoints' as *;
+@use 'functions' as *;
 
 @mixin mq($size) {
   @if map.has-key($breakpoints, $size) {
@@ -20,6 +21,13 @@
   } @else {
     @error 'the keyword #{$size} is not in the $breakpoints map';
   }
+}
+
+@mixin underline ($color: clr("blue", 500)) {
+  text-decoration: underline;
+  text-decoration-color: $color;
+  text-decoration-thickness: 0.25em;
+  text-underline-offset: 5px;
 }
 
 @mixin underline-transition(
@@ -58,12 +66,64 @@
   }
 }
 
-@mixin border($color, $side: all, $width: 1px, $style: solid, $radius: 0) {
-  @if $side == all {
-    border: $width $style $color;
-    border-radius: $radius;
+@mixin border-side($side: all, $width: 1px) {
+  border-#{$side}: $width solid clr(neutral, 200);
+
+  [data-theme="dark"] & {
+    border-#{$side}: $width solid clr(neutral, 700);
+  }
+}
+
+@mixin border-all($width: 1px, $radius: 0) {
+  border-width: $width;
+  border-style: solid;
+  border-radius: $radius;
+  border-color: clr(neutral, 200);
+
+  [data-theme="dark"] & {
+    border-color: clr(neutral, 700);
+  }
+}
+
+@mixin box-shadow(
+  $x: 0,
+  $y: 4px,
+  $blur: 6px,
+  $spread: 0,
+  $color: rgba(0, 0, 0, 0.1)
+) {
+  box-shadow: $x $y $blur $spread $color;
+}
+
+@mixin divider($width: full, $thickness: 1px, $margin-top: 0, $margin-bottom: 0) {
+  height: $thickness;
+  background-color: clr(neutral, 200);
+  margin-top: $margin-top;
+  margin-bottom: $margin-bottom;
+  margin-inline: auto;
+  border: none;
+  display: block;
+  content: '';
+  
+  [data-theme="dark"] & {
+    background-color: clr(neutral, 700);
+  }
+
+  @if $width == full {
+    width: 100%;
+  } @else if $width == wide {
+    width: 95%;
+  } @else if $width == half {
+    width: 50%;
+  } @else if $width == quarter {
+    width: 25%;
+  } @else if $width == third {
+    width: 33.333%;
+  } @else if $width == two-thirds {
+    width: 66.666%;
+  } @else if $width == auto {
+    width: auto;
   } @else {
-    border-#{$side}: $width $style $color;
-    border-radius: $radius;
+    @error 'Invalid width value';
   }
 }

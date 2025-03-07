@@ -1,13 +1,13 @@
 ---
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
-import cesar from "@/assets/avatar.jpg";
+import avatar from "@/assets/avatar.jpg";
 ---
 
 <nav class="navbar">
   <div class="navbar__container">
     <Image
-      src={cesar}
+      src={avatar}
       alt="Cesar Poumian"
       class="navbar__avatar"
       format="avif"
@@ -62,7 +62,9 @@ import cesar from "@/assets/avatar.jpg";
     menu?.classList.toggle("is-active");
     navbarToggle.classList.toggle("is-active");
   });
+</script>
 
+<script>
   // Theme toggle
   const themeToggle = document.getElementById("theme-toggle");
   const themeToggleIcons = document.querySelectorAll(".navbar__theme-icon");

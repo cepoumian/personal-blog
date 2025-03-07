@@ -1,0 +1,23 @@
+@use '../abstracts' as *;
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  @include underline-transition($color: clr("blue", 500));
+
+  &--primary {
+    color: clr("neutral", 700);
+  
+    [data-theme="dark"] & {
+      color: clr("neutral", 0);
+    }
+  }
+  
+  &--secondary {
+    color: clr("neutral", 100);
+  }
+  
+  &--underline {
+    @include underline($color: clr("blue", 500));
+  }
+}

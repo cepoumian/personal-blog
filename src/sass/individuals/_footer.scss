@@ -1,0 +1,31 @@
+@use '../abstracts' as *;
+
+.footer {
+ &__container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-inline: size(8);
+  padding-block-start: size(24);
+  padding-block-end: size(16);
+  max-width: $content-max-width;
+  margin-inline: auto;
+
+  @include border-side(left);
+  @include border-side(right);
+
+  @include mq('tablet') {
+    flex-direction: column;
+    gap: size(8);
+  }
+ }
+
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .divider {
+    @include divider($width: two-thirds);
+  }
+}

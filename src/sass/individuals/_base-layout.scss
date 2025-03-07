@@ -1,0 +1,18 @@
+@use '../abstracts/' as *;
+
+.base-layout {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  &__content {
+    padding: 10px;
+    max-width: $content-max-width;
+    margin-inline: auto;
+    @include border-side(left);
+    @include border-side(right);
+
+    /* &::after {
+      @include divider($width: wide, $margin-top: size(48));
+    } */
+  }
+}

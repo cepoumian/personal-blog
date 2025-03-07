@@ -1,0 +1,55 @@
+---
+type headingOptions = {
+  h1: "1";
+  h2: "2";
+  h3: "3";
+  h4: "4";
+  h5: "5";
+  h6: "6";
+};
+
+interface Props {
+  tagName: keyof headingOptions;
+  level: string;
+  ornament?: boolean;
+  underline?: boolean;
+}
+
+const { tagName, level, ornament, underline } = Astro.props;
+const Tag = tagName;
+---
+
+<Tag
+  class:list={["heading", { ornament: ornament, underline: underline }]}
+  data-level={level}
+>
+  <slot />
+</Tag>
+
+<style lang="scss">
+  @use "../../sass/abstracts/" as *;
+
+  .ornament {
+    position: relative;
+    display: inline-block;
+  }
+
+  .ornament::after {
+    content: "";
+    position: absolute;
+    right: -2.5rem;
+    top: 75%;
+    width: 2rem;
+    height: 0.2rem;
+    background-color: clr("blue", 500);
+    border-radius: 999px;
+
+    @include mq("phone") {
+      display: none;
+    }
+  }
+
+  .underline {
+    @include underline($color: clr("blue", 500));
+  }
+</style>

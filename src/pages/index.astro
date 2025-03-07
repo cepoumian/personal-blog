@@ -1,15 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Intro from "@/components/home/Intro.astro";
+import LatestArticles from "@/components/home/LatestArticles.astro";
 ---
 
 <BaseLayout>
-  <!-- <h1 class="heading" data-level="1">Blog here</h1> -->
+  <Intro />
+  <LatestArticles />
 </BaseLayout>
-
-<style lang="scss">
-  @import "src/sass/abstracts/";
-
-  h1 {
-    // color: clr(blue, 500);
-  }
-</style>

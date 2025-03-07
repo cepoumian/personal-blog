@@ -12,6 +12,11 @@
   }
 }
 
+.flex-col {
+  flex-direction: column;
+  gap: size(32);
+}
+
 .align {
   &-center {
     align-items: center;

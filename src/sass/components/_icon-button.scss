@@ -1,0 +1,23 @@
+@use '../abstracts/' as *;
+
+.icon-button {
+  background-color: clr("neutral", 0);
+  color: clr("neutral", 700);
+  padding: size(12);
+  border-radius: size(12);
+  @include box-shadow();
+
+  [data-theme="dark"] & {
+    background-color: clr("neutral", 800);
+    color: clr("neutral", 300);
+  }
+
+  &--blend {
+    background-color: clr("neutral", 100);
+    box-shadow: none;
+
+    [data-theme="dark"] & {
+      background-color: clr("neutral", 900);
+    }
+  }
+}
