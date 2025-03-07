@@ -10,9 +10,5 @@
     margin-inline: auto;
     @include border-side(left);
     @include border-side(right);
-
-    /* &::after {
-      @include divider($width: wide, $margin-top: size(48));
-    } */
   }
 }

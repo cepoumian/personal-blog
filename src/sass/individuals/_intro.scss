@@ -1,5 +1,5 @@
 @use '../abstracts' as *;
 
 .intro::after {
-  @include divider($width: wide, $margin-top: size(48));
+  @include divider($width: widest, $margin-top: size(48));
 }

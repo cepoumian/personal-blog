@@ -1,0 +1,60 @@
+---
+import type { GetStaticPaths } from "astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Intro from "@/components/Intro.astro";
+import AllArticles from "@/components/blog/AllArticles.astro";
+import { baseData } from "@/data/siteData";
+import { getCollection } from "astro:content";
+import Link from "@/components/ui/Link.astro";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  // Collections
+  const allPosts = await getCollection("posts", ({ data }) => !data.isDraft);
+  return paginate(
+    allPosts.sort(
+      (a, b) =>
+        new Date(b.data.pubDate).getUTCDate() -
+        new Date(a.data.pubDate).getUTCDate()
+    ),
+    {
+      pageSize: 3,
+    }
+  );
+}) satisfies GetStaticPaths;
+const { page } = Astro.props;
+console.log(page);
+---
+
+<BaseLayout>
+  <Intro greeting={baseData.blog_title} intro={baseData.blog_intro} />
+  <AllArticles data={page.data} />
+  <div class="pagination">
+    <div class="pagination__page">
+      Page {page.currentPage}
+    </div>
+    <div class="pagination__links">
+      {
+        page.url.prev && (
+          <Link href={page.url.prev} underline>
+            Previous articles
+          </Link>
+        )
+      }
+      {
+        page.url.next && (
+          <Link href={page.url.next} underline>
+            Next articles
+          </Link>
+        )
+      }
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .pagination {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+</style>

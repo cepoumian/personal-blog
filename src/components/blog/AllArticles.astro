@@ -4,21 +4,21 @@ import Heading from "../ui/Heading.astro";
 import Link from "../ui/Link.astro";
 import ArticlePreview from "../article/ArticlePreview.astro";
 
-const posts: CollectionEntry<"posts">[] = await getCollection("posts");
+interface Props {
+  data: CollectionEntry<"posts">[];
+}
+
+const { data: posts } = Astro.props as Props;
 ---
 
 <section class="latest-articles padding-block-start-48 padding-block-end-24">
-  <Heading tagName="h1" level="1" ornament>Latest Articles</Heading>
   <div class="stack">
     {
-      posts
-        .slice(0, 3)
-        .map(({ data, slug }) => (
-          <ArticlePreview data={data} url={`/posts/${slug}/`} />
-        ))
+      posts.map(({ data, slug }) => (
+        <ArticlePreview data={data} url={`/posts/${slug}/`} showDescription />
+      ))
     }
   </div>
-  <Link href="#" underline>View all articles</Link>
 </section>
 
 <style lang="scss">

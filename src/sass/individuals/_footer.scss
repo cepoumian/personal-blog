@@ -26,6 +26,6 @@
   }
 
   .divider {
-    @include divider($width: two-thirds);
+    @include divider($width: wide);
   }
 }

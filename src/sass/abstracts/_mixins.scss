@@ -111,8 +111,11 @@
 
   @if $width == full {
     width: 100%;
-  } @else if $width == wide {
+  } @else if $width == widest {
     width: 95%;
+  } @else if $width == wide {
+    width: 87.5%;
+  } @else if $width == auto {
   } @else if $width == half {
     width: 50%;
   } @else if $width == quarter {
