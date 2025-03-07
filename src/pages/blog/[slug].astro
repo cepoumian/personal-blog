@@ -1,0 +1,49 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Heading from "@/components/ui/Heading.astro";
+import { baseData } from "@/data/siteData";
+import { getCollection, type CollectionEntry } from "astro:content";
+import type { GetStaticPaths } from "astro";
+import { formatDate } from "@/utils/date-utils";
+
+export const getStaticPaths = (async () => {
+  // Collections
+  const allPosts = await getCollection("posts", ({ data }) => !data.isDraft);
+  return allPosts.map((p) => ({
+    params: { slug: p.slug },
+    props: { post: p },
+  }));
+}) satisfies GetStaticPaths;
+
+type Props = {
+  post: CollectionEntry<"posts">;
+};
+
+const { slug } = Astro.params;
+const { post } = Astro.props;
+
+const { Content } = await post.render();
+
+const { title, description, pubDate } = post.data;
+---
+
+<BaseLayout>
+  <article class="blog-entry">
+    <section
+      aria-label="Post metadata"
+      class="blog-entry__intro | padding-block-start-48 padding-block-end-32"
+    >
+      <header class="stack">
+        <Heading tagName="h2" level="2">{title}</Heading>
+        <p class="blog-entry__date">
+          {formatDate(pubDate.toLocaleDateString())}
+        </p>
+        <p class="blog-entry__description">{description}</p>
+      </header>
+    </section>
+    <hr class="divider" />
+    <section class="blog-entry__content | padding-block-32">
+      <Content />
+    </section>
+  </article>
+</BaseLayout>

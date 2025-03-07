@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import avatar from "@/assets/avatar.jpg";
+import { navData } from "@/data/siteData";
 ---
 
 <nav class="navbar">
@@ -16,10 +17,15 @@ import avatar from "@/assets/avatar.jpg";
     />
     <div class="navbar__content">
       <ul class="navbar__menu">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
+        {
+          navData.map(({ title, href }) => (
+            <li>
+              <a href={href} class="navbar__link">
+                {title}
+              </a>
+            </li>
+          ))
+        }
       </ul>
       <button
         class="navbar__toggle"

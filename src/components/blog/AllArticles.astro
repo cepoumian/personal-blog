@@ -1,7 +1,5 @@
 ---
-import { getCollection, type CollectionEntry } from "astro:content";
-import Heading from "../ui/Heading.astro";
-import Link from "../ui/Link.astro";
+import { type CollectionEntry } from "astro:content";
 import ArticlePreview from "../article/ArticlePreview.astro";
 
 interface Props {
@@ -15,7 +13,7 @@ const { data: posts } = Astro.props as Props;
   <div class="stack">
     {
       posts.map(({ data, slug }) => (
-        <ArticlePreview data={data} url={`/posts/${slug}/`} showDescription />
+        <ArticlePreview data={data} url={`/blog/${slug}/`} showDescription />
       ))
     }
   </div>

@@ -10,6 +10,25 @@ export const baseData = {
   blog_title: "My Articles",
 };
 
+export const navData = [
+  {
+    title: "Home",
+    href: "/",
+  },
+  {
+    title: "About",
+    href: "/about",
+  },
+  {
+    title: "Writings",
+    href: "/blog",
+  },
+  {
+    title: "Projects",
+    href: "/projects",
+  },
+];
+
 export const socialData = [
   {
     title: "linkedin",

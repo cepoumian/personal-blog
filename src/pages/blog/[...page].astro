@@ -6,23 +6,15 @@ import AllArticles from "@/components/blog/AllArticles.astro";
 import { baseData } from "@/data/siteData";
 import { getCollection } from "astro:content";
 import Link from "@/components/ui/Link.astro";
+import { sortPostsByDate } from "@/utils/date-utils";
 
 export const getStaticPaths = (async ({ paginate }) => {
-  // Collections
   const allPosts = await getCollection("posts", ({ data }) => !data.isDraft);
-  return paginate(
-    allPosts.sort(
-      (a, b) =>
-        new Date(b.data.pubDate).getUTCDate() -
-        new Date(a.data.pubDate).getUTCDate()
-    ),
-    {
-      pageSize: 3,
-    }
-  );
+  return paginate(sortPostsByDate(allPosts), {
+    pageSize: 3,
+  });
 }) satisfies GetStaticPaths;
 const { page } = Astro.props;
-console.log(page);
 ---
 
 <BaseLayout>

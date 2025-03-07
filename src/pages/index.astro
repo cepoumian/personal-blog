@@ -1,11 +1,16 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 import Intro from "@/components/Intro.astro";
 import LatestArticles from "@/components/home/LatestArticles.astro";
 import { baseData } from "@/data/siteData";
+import { getCollection, type CollectionEntry } from "astro:content";
+import { sortPostsByDate } from "@/utils/date-utils";
+
+const posts: CollectionEntry<"posts">[] = await getCollection("posts");
+const sortedPosts = sortPostsByDate(posts);
 ---
 
 <BaseLayout>
   <Intro greeting={baseData.greeting} intro={baseData.home_intro} showSocial />
-  <LatestArticles />
+  <LatestArticles posts={sortedPosts} />
 </BaseLayout>

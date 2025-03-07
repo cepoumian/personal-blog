@@ -1,11 +1,23 @@
 ---
+import { Icon } from "astro-icon/components";
 import IconButton from "./ui/IconButton.astro";
 ---
 
 <footer class="footer">
-  <div class="divider"></div>
+  <hr class="divider" />
   <div class="footer__container">
-    <p>Made with ❤️ and ☕ by Cesar Poumian</p>
+    <div>
+      <p>
+        Crafted with ❤️ and <span
+          ><Icon
+            style="display: inline; transform: translateY(0.4em);"
+            name="icon--astro"
+            size={24}
+          /></span
+        >
+      </p>
+      <p>by Cesar Poumian</p>
+    </div>
     <div class="social-icons">
       <IconButton
         tagName="a"

@@ -1,0 +1,78 @@
+@use '../abstracts/' as *;
+
+.blog-entry {
+  &__date {
+    font-style: italic;
+  }
+  
+  &__description {
+    font-size: fs(450);
+    font-weight: $fw-400;
+  }
+
+  .divider {
+    @include divider($width: widest);
+  }
+
+  &__content {
+
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: $fw-600;
+      line-height: $line-height-tight;
+      white-space: normal;
+      word-break: break-word;
+      color: clr(neutral, 700);
+      margin-block: size(24) size(16);
+
+      [data-theme='dark'] & {
+        color: clr(neutral, 0);
+      }
+    }
+
+    h1 {
+      font-size: clamp(fs(600), fs(700) + 2vw, fs(900));
+    }
+
+    h2 {
+      font-size: clamp(fs(600), fs(600) + 2vw, fs(800));
+    }
+
+    h3 {
+      font-size: fs(600);
+    }
+
+    h4 {
+      font-size: fs(500);
+    }
+
+    h5 {
+      font-size: fs(450);
+    }
+
+    h6 {
+      font-size: fs(400);
+    }
+
+
+    p {
+      margin-block: size(16);
+    }
+
+    ul, ol {
+      padding-left: 1.5rem;
+      margin-block: 1rem;
+    }
+
+    pre {
+      padding: size(16);
+      margin-block: size(24);
+    }
+
+    blockquote {
+      padding: 1rem;
+      border-left: 4px solid var(--color-accent);
+      background-color: var(--color-background-alt);
+      margin-block: 1.5rem;
+    }
+  }
+}
