@@ -9,7 +9,7 @@ interface Props {
 const { data: posts } = Astro.props as Props;
 ---
 
-<section class="latest-articles padding-block-start-48 padding-block-end-24">
+<section class="all-articles | padding-block-start-48 padding-block-end-24">
   <div class="stack">
     {
       posts.map(({ data, slug }) => (
@@ -22,7 +22,7 @@ const { data: posts } = Astro.props as Props;
 <style lang="scss">
   @use "../../sass/abstracts/" as *;
 
-  .latest-articles {
+  .all-articles {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
