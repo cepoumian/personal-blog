@@ -4,7 +4,7 @@ export const baseData = {
     "Welcome to my blog! I'm a software engineer and I write about programming, tech, and personal development.",
   home_intro:
     "Welcome to my blog! I'm a software engineer and I write about programming, tech, and personal development.",
-  greeting: "Hello, I'm Cesar",
+  greeting: "Hello, I'm Cesar 👋",
   blog_intro:
     "Below are all my recent blog posts. Click on any title to read the full article.",
   blog_title: "My Articles",
