@@ -36,7 +36,7 @@ const { title, description, pubDate } = post.data;
       <header class="stack">
         <Heading tagName="h2" level="2">{title}</Heading>
         <p class="blog-entry__date">
-          {formatDate(pubDate.toLocaleDateString())}
+          {formatDate(pubDate)}
         </p>
         <p class="blog-entry__description">{description}</p>
       </header>

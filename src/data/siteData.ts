@@ -1,13 +1,13 @@
 export const baseData = {
   title: "Cesar Poumian's Blog",
   description:
-    "Welcome to my blog! I'm a software engineer and I write about programming, tech, and personal development.",
+    "Cesar Poumian's blog. Web development, programming, and personal projects.",
   home_intro:
-    "Welcome to my blog! I'm a software engineer and I write about programming, tech, and personal development.",
+    "Welcome to my blog! I’m a web developer based in México. I created this blog to document techniques, patterns, insights, etc. to keep myself accountable, I also document any new personal projects I work on.",
   greeting: "Hello, I'm Cesar 👋",
   blog_intro:
-    "Below are all my recent blog posts. Click on any title to read the full article.",
-  blog_title: "My Articles",
+    "Below are all my recent blog posts. Some of them are tutorials, others are personal projects, and some are insights discussing patterns, libraries, etc.",
+  blog_title: "My Posts",
 };
 
 export const navData = [

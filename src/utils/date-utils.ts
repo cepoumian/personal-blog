@@ -1,13 +1,12 @@
 import type { CollectionEntry } from "astro:content";
 
-export function formatDate(dateString: string) {
-  const [month, day, year] = dateString.split("/");
-  const date = new Date(`${year}-${month}-${day}`);
-  return date.toLocaleDateString("en-US", {
+export function formatDate(pubDate: Date) {
+  const formattedDate = new Date(pubDate).toLocaleDateString("en-US", {
+    year: "numeric",
     month: "long",
     day: "numeric",
-    year: "numeric",
   });
+  return formattedDate;
 }
 
 export function sortPostsByDate(posts: CollectionEntry<"posts">[]) {
