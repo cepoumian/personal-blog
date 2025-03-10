@@ -2,17 +2,16 @@
 title: About Me
 ---
 
-Hi, I’m Paulina! Ever since I can remember, I’ve had a passion for creativity and problem-solving. That’s what led me to the world of front-end web development. There’s something magical about seeing an idea come to life in the browser—whether it’s a simple layout experiment or a complex interface for a bigger project.
+Hi, I’m Cesar. I’m a web developer and designed hailing from Mexico.
 
-When I’m not coding, I love getting lost in a good book. My taste is pretty eclectic: I’ll happily read everything from fantasy novels to biographies of tech pioneers. Reading helps me unwind and often sparks new ideas for my coding projects.
+I’ve been working as a developer for 5 years now, mainly as a frontend engineer in enterprise applications. During this time, one of the things I’ve struggled the most is following through with personal projects.
 
-Another big passion of mine is the great outdoors. Hiking allows me to disconnect from the digital world and reconnect with nature. I love challenging hikes with rewarding views at the top. And if I’m not on the trails, you might catch me rock climbing. The combination of mental focus and physical endurance is a perfect parallel to tackling tough coding challenges!
+I’ve started this blog to keep myself accountable and properly follow through with any work that is personal, be it a development or deign project, an idea, a course, etc.
 
-Some of my favorite books:
+A little bit about me…
 
-- “The Pragmatic Programmer” by Andrew Hunt and David Thomas (for helpful insights into software development)
-- “Ready Player One” by Ernest Cline (for some futuristic escapism)
-- “The Hobbit” by J.R.R. Tolkien (for a bit of fantasy fun)
-- “Educated” by Tara Westover (for incredible inspiration)
+I started working full-time as a dev in 2020. Before that, I worked in education, educational technology, e-learning, etc.
 
-I absolutely love my workspace as a place that inspires me to do my best work, so I thought I’d share it with you:
+I have a masters degree in Multimedia Design with a specialization in Web and Mobile products.
+
+The things I enjoy the most are tech and music. In my spare time, I enjoy making music.
