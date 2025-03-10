@@ -1,0 +1,18 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Heading from "@/components/ui/Heading.astro";
+import { getEntry, type CollectionEntry } from "astro:content";
+
+const about = await getEntry("about", "about");
+
+const { Content } = await about!.render();
+---
+
+<BaseLayout>
+  <article class="blog-entry | padding-block-start-48">
+    <Heading tagName="h1" level="1" underline>About Me</Heading>
+    <section class="blog-entry__content | padding-block-32">
+      <Content />
+    </section>
+  </article>
+</BaseLayout>

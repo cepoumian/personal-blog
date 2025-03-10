@@ -15,4 +15,14 @@ const posts = defineCollection({
     }),
 });
 
-export const collections = { posts };
+const about = defineCollection({
+  type: "content",
+  schema: () =>
+    z.object({
+      title: z.string().max(65, {
+        message: "Title cannot be longer than 65 characters",
+      }),
+    }),
+});
+
+export const collections = { posts, about };

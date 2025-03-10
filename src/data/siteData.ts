@@ -16,16 +16,12 @@ export const navData = [
     href: "/",
   },
   {
-    title: "About",
-    href: "/about",
-  },
-  {
-    title: "Writings",
+    title: "Blog",
     href: "/blog",
   },
   {
-    title: "Projects",
-    href: "/projects",
+    title: "About",
+    href: "/about",
   },
 ];
 
