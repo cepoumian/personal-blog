@@ -9,7 +9,7 @@ interface Props {
 const { data: posts } = Astro.props as Props;
 ---
 
-<section class="all-articles | padding-block-start-48 padding-block-end-24">
+<section class="all-articles | padding-block-start-32 padding-block-end-24">
   <div class="stack">
     {
       posts.map(({ data, slug }) => (

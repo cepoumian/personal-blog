@@ -1,0 +1,24 @@
+@use '../abstracts' as *;
+
+.category-filter {
+  display: flex;
+  gap: size(8);
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  &__pill {
+    padding: size(8) size(16);
+    border: clr('blue', 800) 2px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--text-color);
+    font-weight: bold;
+    transition: 0.3s ease;
+  
+    &.active {
+      background-color: clr('blue', 800);
+      color: white;
+    }
+  }
+}

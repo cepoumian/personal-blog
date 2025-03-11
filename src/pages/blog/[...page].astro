@@ -1,4 +1,7 @@
 ---
+// Enable server side rendering
+export const prerender = false;
+
 import type { GetStaticPaths } from "astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Intro from "@/components/Intro.astro";
@@ -8,33 +11,81 @@ import { getCollection } from "astro:content";
 import Link from "@/components/ui/Link.astro";
 import { sortPostsByDate } from "@/utils/date-utils";
 
-export const getStaticPaths = (async ({ paginate }) => {
+/* export const getStaticPaths = (async ({ paginate }) => {
   const allPosts = await getCollection("posts", ({ data }) => !data.isDraft);
   return paginate(sortPostsByDate(allPosts), {
     pageSize: 3,
   });
 }) satisfies GetStaticPaths;
-const { page } = Astro.props;
+const { page } = Astro.props; */
+
+const url = new URL(Astro.request.url);
+const selectedCategory = url.searchParams.get("category") || null;
+const currentPage = Number(url.searchParams.get("page")) || 1;
+const pageSize = 3; // Number of posts per page
+
+const allPosts = await getCollection("posts", ({ data }) => !data.isDraft);
+const categories = [...new Set(allPosts.map((post) => post.data.category))];
+
+console.log(categories);
+
+const filteredPosts = selectedCategory
+  ? allPosts.filter((post) => post.data.category === selectedCategory)
+  : allPosts;
+
+// Paginate posts manually
+const totalPosts = filteredPosts.length;
+const totalPages = Math.ceil(totalPosts / pageSize);
+const paginatedPosts = filteredPosts.slice(
+  (currentPage - 1) * pageSize,
+  currentPage * pageSize
+);
+
+// Generate previous/next page links
+const baseUrl = `/blog?${selectedCategory ? `category=${selectedCategory}&` : ""}`;
+const prevPageUrl =
+  currentPage > 1 ? `${baseUrl}page=${currentPage - 1}` : null;
+const nextPageUrl =
+  currentPage < totalPages ? `${baseUrl}page=${currentPage + 1}` : null;
 ---
 
 <BaseLayout>
   <Intro greeting={baseData.blog_title} intro={baseData.blog_intro} />
-  <AllArticles data={page.data} />
+
+  <!-- Category Filter (Pill Buttons) -->
+  <div class="category-filter | padding-block-start-32">
+    <button
+      class={`category-filter__pill ${!selectedCategory ? "active" : ""}`}
+      data-category="">All</button
+    >
+    {
+      categories.map((category) => (
+        <button
+          class={`category-filter__pill ${selectedCategory === category ? "active" : ""}`}
+          data-category={category}
+        >
+          {category}
+        </button>
+      ))
+    }
+  </div>
+
+  <AllArticles data={paginatedPosts} />
   <div class="pagination">
     <div class="pagination__page">
-      <span>Page {page.currentPage}</span>
+      <span>Page {currentPage} of {totalPages}</span>
     </div>
     <div class="pagination__links">
       {
-        page.url.prev && (
-          <Link href={page.url.prev} underline>
+        prevPageUrl && (
+          <Link href={prevPageUrl} underline>
             <span>Previous articles</span>
           </Link>
         )
       }
       {
-        page.url.next && (
-          <Link href={page.url.next} underline>
+        nextPageUrl && (
+          <Link href={nextPageUrl} underline>
             <span>Next articles</span>
           </Link>
         )
@@ -42,6 +93,30 @@ const { page } = Astro.props;
     </div>
   </div>
 </BaseLayout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const categoryButtons = document.querySelectorAll(".category-filter__pill");
+
+    categoryButtons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const category = (event.target as HTMLElement).getAttribute(
+          "data-category"
+        );
+        const url = new URL(window.location.href);
+
+        if (category) {
+          url.searchParams.set("category", category);
+        } else {
+          url.searchParams.delete("category");
+        }
+
+        url.searchParams.delete("page"); // Reset pagination when category changes
+        window.location.href = url.toString();
+      });
+    });
+  });
+</script>
 
 <style lang="scss">
   .pagination {
