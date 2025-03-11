@@ -2,9 +2,10 @@
 title: FrontEnd Mentor is Amazing
 description: How FrontEnd Mentor is Helping Me Craft a New Portfolio
 pubDate: 2025-03-10
+category: writings
 ---
 
-### Context (Growth as a developer but not a lot to show for it)
+### Context (How I grew as a developer, but ended up with not a lot to show for it)
 
 Often, when I visit another developer’s portfolio page I feel overwhelmed. I see devs who work full-time in companies and still have time to work on amazing personal stuff.
 
@@ -12,7 +13,7 @@ I consider myself a solid frontend dev and decent at backend and DevOps, but TBH
 
 After four years of devoting most of my time to my job, working as a front end dev in enterprise level projects, I realized two things:
 
-1. During that time, I created amazing stuff for those projects: component libraries, dashboards, plugins, data visualizations, whole marketing websites, etc.
+1. During that time, I created really cool stuff for those projects: component libraries, dashboards, plugins, data visualizations, whole marketing websites, etc.
 2. None of it was mine to share or show to anyone.
 
 Sure, a full-time job provides financial stability and many other benefits, but developers are creatives, and for creatives, a solid portfolio is a must, not a plus.
@@ -21,11 +22,11 @@ Unfortunately, my portfolio only showcased freelance projects from before I land
 
 So, I thought the best thing to do was to take it down and start from square one.
 
-### New goal for 2025 and challenges
+### New goal and challenges
 
 My goal for 2025 was simple: create a solid portfolio, trying to work on personal projects daily, even if there’s a lot of work.
 
-Cool… so, the goal was set, but… where was I going to get projects from?
+Cool… the goal was set, but where was I going to get projects from?
 
 Even though I may squeeze a few hours here and there to work on personal projects, I definitely don’t have the time for either of these alternatives:
 

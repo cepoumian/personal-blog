@@ -2,6 +2,7 @@
 title: Managing Toggle States in React
 description: Learn the basics of managing Toggle States in React.
 pubDate: 2025-03-04
+category: tutorials
 ---
 
 # Managing Toggle States in React

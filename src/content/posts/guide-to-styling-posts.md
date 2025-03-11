@@ -2,6 +2,7 @@
 title: The Ultimate Guide to Styling Markdown Blog Posts
 description: The Ultimate Guide to Styling Markdown Blog Posts.
 pubDate: 2025-03-08
+category: tutorials
 ---
 
 # The Ultimate Guide to Styling Markdown Blog Posts

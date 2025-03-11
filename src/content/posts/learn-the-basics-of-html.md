@@ -2,6 +2,7 @@
 title: Learn the Basics of HTML
 description: Learn the basics of HTML and start building your own websites. Discover the power of HTML and how it can help you create amazing web experiences.
 pubDate: 2024-01-04
+category: tutorials
 ---
 
 HTML (HyperText Markup Language) is the standard markup language used to create web pages. It is the foundation of every website you visit. Understanding the basics of HTML is essential for anyone who wants to build and design web pages. In this post, we will explore the key concepts and elements of HTML.

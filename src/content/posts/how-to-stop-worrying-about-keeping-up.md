@@ -2,6 +2,7 @@
 title: How to Stop Worrying About Keeping Up
 description: Learn how to stop worrying about keeping up with the latest technologies and trends in web development.
 pubDate: 2024-01-06
+category: writings
 ---
 
 ## Introduction

@@ -2,6 +2,7 @@
 title: Five Challenges to Frontend Web Development
 description: Let’s explore five of the most common challenges that frontend developers face and how to overcome them.
 pubDate: 2024-01-07
+category: writings
 ---
 
 ## 1. Cross-Browser Compatibility
