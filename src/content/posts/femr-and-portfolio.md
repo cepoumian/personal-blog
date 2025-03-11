@@ -5,7 +5,7 @@ pubDate: 2025-03-10
 category: writings
 ---
 
-### Context (How I grew as a developer, but ended up with not a lot to show for it)
+### Context (Balancing work and personal projects)
 
 Often, when I visit another developer’s portfolio page I feel overwhelmed. I see devs who work full-time in companies and still have time to work on amazing personal stuff.
 
@@ -24,17 +24,23 @@ So, I thought the best thing to do was to take it down and start from square one
 
 ### New goal and challenges
 
-My goal for 2025 was simple: create a solid portfolio, trying to work on personal projects daily, even if there’s a lot of work.
+My goal for 2025 was simple: create a solid portfolio, trying to work on personal projects daily, even if there’re things from work I could be doing.
 
-Cool… the goal was set, but where was I going to get projects from?
+A big mistake I made during my first years working in enterprise applications is devoting personal time to work stuff.
 
-Even though I may squeeze a few hours here and there to work on personal projects, I definitely don’t have the time for either of these alternatives:
+I honestly believed that the extra effort would be appreciated and/or rewarded. Although, to a certain extent, in some cases it did, honestly, not to an extent that justified all the hours I took from my spare time which could have been used to work on personal projects.
+
+Having realized the error of my ways, I decided to devote all my active spare time to personal projects that could be part of a portfolio. The only issue now was… where was I going to get projects from?
+
+Even though I may squeeze a few hours here and there to work on these projects, I definitely don’t have the time for either of these alternatives:
 
 a) Setup a freelance operation again;
 
-b) Come up with the ideas and make the designs myself.
+b) Come up with all the ideas and designs myself.
 
-As a designer, I plan to create a few custom projects to fully showcase my skills. However, I don't have time to handle concept and design for every portfolio piece.
+As a designer, I plan to create a few custom projects to fully showcase my skills. However, I just don't have time to handle the design for every portfolio piece.
+
+I thought of strategies like cloning apps and websites, but I really don’t like the idea of having clones as part of my portfolio… I needed something else. Thanks to a recommendation made by [Kevin Powell](https://courses.kevinpowell.co/) (who is great CSS instructor) in one of his tutorials, I found [Frontend Mentor](https://www.frontendmentor.io/).
 
 ### Enter Frontend Mentor
 
@@ -51,4 +57,4 @@ Beyond escaping the endless cycle of courses and tutorials, Frontend Mentor offe
 
 ### Conclusion
 
-Though I will only base some of my portfolio projects on the challenges offered by Frontend Mentor, this platform will still play a key role in my journey. First of all, having already finished five projects, I can say it is an amazing way to get the mental juices flowing. The fact that I don’t have to worry about either the concept or the design of a project, really allows me to be laser-focused on the things I want. For example, smaller projects have allowed me to explore working with vanilla technologies (JS/CSS) but taking them much further than I previously had (experimenting with Web Components and applying vanilla JS design patterns for state management and side effects, newer CSS features like layers, container queries, etc. ). On the other hand, larger projects have allowed me to work with frameworks I don’t use at work such as Astro and SvelteKit, which I really really like.
+Though I will only base some of my portfolio projects on the challenges offered by Frontend Mentor, this platform will definitely play a key role in my journey. First of all, having already finished five projects, I can say it is an amazing way to get the mental juices flowing. The fact that I don’t have to worry about either the concept or the design of a project, really allows me to be laser-focused on the things I want. For example, smaller projects have allowed me to explore working with vanilla technologies (JS/CSS) but taking them much further than I previously had (experimenting with Web Components and applying vanilla JS design patterns for state management and side effects, newer CSS features like layers, container queries, etc. ). On the other hand, larger projects have allowed me to work with frameworks I don’t use at work such as Alpine, Astro and SvelteKit, which I really really like.
