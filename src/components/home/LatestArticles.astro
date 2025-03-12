@@ -12,7 +12,7 @@ const { posts } = Astro.props;
 ---
 
 <section class="latest-articles padding-block-start-48 padding-block-end-24">
-  <Heading tagName="h1" level="1" ornament>Latest Articles</Heading>
+  <Heading tagName="h1" level="1" ornament>Latest Posts</Heading>
   <div class="stack">
     {
       posts
@@ -22,7 +22,7 @@ const { posts } = Astro.props;
         ))
     }
   </div>
-  <Link href="/blog" underline>View all articles</Link>
+  <Link href="/blog" underline>View all posts</Link>
 </section>
 
 <style lang="scss">
