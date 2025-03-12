@@ -1,9 +1,11 @@
 @use '../abstracts/' as *;
 
 .base-layout {
+  min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
+  grid-template-columns: 100%;
+
   &__content {
     padding: 10px;
     max-width: $content-max-width;
