@@ -6,7 +6,7 @@ export const baseData = {
     "Welcome to my blog! I’m a web developer based in México. I created this blog to document techniques, patterns, insights, etc. to keep myself accountable, I also document any new personal projects I work on.",
   greeting: "Hello, I'm Cesar 👋",
   blog_intro:
-    "Below are all my recent blog posts. Some of them are tutorials, others are personal projects, and some are insights discussing patterns, libraries, etc.",
+    "Below are all my recent blog posts. Some of them are tutorials, others are project walk-throughs/case-studies, and some are insights discussing patterns, libraries, etc.",
   blog_title: "My Posts",
 };
 

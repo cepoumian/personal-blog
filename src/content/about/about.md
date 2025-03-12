@@ -2,7 +2,7 @@
 title: About Me
 ---
 
-Hi, I’m Cesar. I’m a web developer and designed hailing from Mexico.
+Hi, I’m Cesar. I’m a web developer and designer hailing from Mexico.
 
 I’ve been working as a developer for 5 years now, mainly as a frontend engineer in enterprise applications. During this time, one of the things I’ve struggled the most is following through with personal projects.
 
