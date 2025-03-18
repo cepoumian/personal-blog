@@ -1,8 +1,17 @@
+---
+title: Personal Blog
+description: Project walk-through / case-study - Frontend Mentor Personal Blog
+pubDate: 2024-03-18
+category: projects
+---
+
 # Frontend Mentor - Personal Blog
 
-This is my implementation of the [Personal Blog challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/personal-blog-lJpVCnmozL).
+I originally intended this blog to be merely a submission to the [Personal Blog challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/devjobs-web-app-HuvC_LP4l?tab=downloads). However, I decided to keep it, put it out there and start writing on it.
 
-I used this challenge as an opportunity to build my actual blog, so I deviated from the original design where necessary. In this post, I’ll share key takeaways, technical choices, and lessons learned.
+I figured that writing would help keep myself accountable while making the process of documenting any personal projects more enjoyable. Needless to say, I deviated from the original design where necessary.
+
+In this post, I’ll share key takeaways, technical choices, and lessons learned.
 
 ## Table of Contents
 
@@ -136,7 +145,7 @@ This **eliminates hardcoded margins** and improves maintainability.
 
 This project reinforced the importance of **modular design** and the advantages of **static site generation**. However, as the blog grows, I may explore **hybrid rendering** to introduce more dynamic features.
 
-Future enhancements:
+Other future enhancements may include:
 
 - **Improved animations** for a smoother user experience.
 - **Search functionality** to help users find content more easily.
