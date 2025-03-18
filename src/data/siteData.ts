@@ -23,6 +23,10 @@ export const navData = [
     title: "About",
     href: "/about",
   },
+  {
+    title: "Rss",
+    href: "/rss.xml",
+  },
 ];
 
 export const socialData = [

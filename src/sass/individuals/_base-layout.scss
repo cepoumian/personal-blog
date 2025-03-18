@@ -7,7 +7,7 @@
   grid-template-columns: 100%;
 
   &__content {
-    padding: 10px;
+    padding: size(12)  clamp(size(12), 5vh, size(24));
     max-width: $content-max-width;
     margin-inline: auto;
     @include border-side(left);

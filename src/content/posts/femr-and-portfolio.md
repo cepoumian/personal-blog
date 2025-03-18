@@ -9,9 +9,9 @@ category: writings
 
 Often, when I visit another developer’s portfolio page I feel overwhelmed. I see devs who work full-time in companies and still have time to work on amazing personal stuff.
 
-I consider myself a solid frontend dev and decent at backend and DevOps, but TBH, portfolio management hasn’t been my strength.
+I consider myself a solid developer, but TBH, portfolio management hasn’t been my strength.
 
-After four years of devoting most of my time to my job, working as a front end dev in enterprise level projects, I realized two things:
+After four years of devoting most of my time to my job, I realized two things:
 
 1. During that time, I created really cool stuff for those projects: component libraries, dashboards, plugins, data visualizations, whole marketing websites, etc.
 2. None of it was mine to share or show to anyone.

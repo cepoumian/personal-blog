@@ -12,6 +12,6 @@ export default defineConfig({
   devToolbar: {
     enabled: false,
   },
-
+  site: "https://cepo-astro-blog.netlify.app/",
   adapter: netlify(),
 });
